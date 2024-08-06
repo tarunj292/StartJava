@@ -1,0 +1,398 @@
+Unable to assign student 229 of BBA Marketing
+Unable to assign student 230 of BBA Marketing
+Unable to assign student 231 of BBA Marketing
+Unable to assign student 232 of BBA Marketing
+Unable to assign student 233 of BBA Marketing
+Unable to assign student 234 of BBA Marketing
+Unable to assign student 235 of BBA Marketing
+Unable to assign student 236 of BBA Marketing
+Unable to assign student 237 of BBA Marketing
+Unable to assign student 238 of BBA Marketing
+Unable to assign student 239 of BBA Marketing
+Unable to assign student 240 of BBA Marketing
+Unable to assign student 241 of BBA Marketing
+Unable to assign student 242 of BBA Marketing
+Unable to assign student 243 of BBA Marketing
+Unable to assign student 244 of BBA Marketing
+Unable to assign student 245 of BBA Marketing
+Unable to assign student 246 of BBA Marketing
+Unable to assign student 247 of BBA Marketing
+Unable to assign student 248 of BBA Marketing
+Unable to assign student 249 of BBA Marketing
+Unable to assign student 250 of BBA Marketing
+Unable to assign student 251 of BBA Marketing
+Unable to assign student 252 of BBA Marketing
+Unable to assign student 253 of BBA Marketing
+Unable to assign student 254 of BBA Marketing
+Unable to assign student 255 of BBA Marketing
+Unable to assign student 256 of BBA Marketing
+501
+Bench:
+  1: BAF
+  73: BAF Hons
+Bench:
+  2: BAF
+  74: BAF Hons
+Bench:
+  3: BAF
+  75: BAF Hons
+Bench:
+  4: BAF
+  76: BAF Hons
+Bench:
+  5: BAF
+  77: BAF Hons
+Bench:
+  6: BAF
+  78: BAF Hons
+Bench:
+  7: BAF
+  79: BAF Hons
+Bench:
+  8: BAF
+  80: BAF Hons
+Bench:
+  9: BAF
+  81: BAF Hons
+Bench:
+  10: BAF
+  82: BAF Hons
+Bench:
+  11: BAF
+  83: BAF Hons
+Bench:
+  12: BAF
+  84: BAF Hons
+Bench:
+  13: BAF
+  85: BAF Hons
+Bench:
+  14: BAF
+  86: BAF Hons
+Bench:
+  15: BAF
+  87: BAF Hons
+Bench:
+  16: BAF
+  88: BAF Hons
+Bench:
+  17: BAF
+  89: BAF Hons
+Bench:
+  18: BAF
+  90: BAF Hons
+Bench:
+  19: BAF
+  91: BAF Hons
+Bench:
+  20: BAF
+  92: BAF Hons
+
+502
+Bench:
+  21: BAF
+  93: BAF Hons
+Bench:
+  22: BAF
+  94: BAF Hons
+Bench:
+  23: BAF
+  95: BAF Hons
+Bench:
+  24: BAF
+  96: BAF Hons
+Bench:
+  25: BAF
+  97: BAF Hons
+Bench:
+  26: BAF
+  98: BAF Hons
+Bench:
+  27: BAF
+  99: BAF Hons
+Bench:
+  28: BAF
+  100: BAF Hons
+Bench:
+  29: BAF
+  101: BAF Hons
+Bench:
+  30: BAF
+  102: BAF Hons
+Bench:
+  31: BAF
+  103: BAF Hons
+Bench:
+  32: BAF
+  104: BAF Hons
+Bench:
+  33: BAF
+  105: BBA Finance
+Bench:
+  34: BAF
+  106: BBA Finance
+Bench:
+  35: BAF
+  107: BBA Finance
+Bench:
+  36: BAF
+  108: BBA Finance
+
+505
+Bench:
+  37: BAF
+  109: BBA Finance
+Bench:
+  38: BAF
+  110: BBA Finance
+Bench:
+  39: BAF
+  111: BBA Finance
+Bench:
+  40: BAF
+  112: BBA Finance
+Bench:
+  41: BAF
+  113: BBA Finance
+Bench:
+  42: BAF
+  114: BBA Finance
+Bench:
+  43: BAF
+  115: BBA Finance
+Bench:
+  44: BAF
+  116: BBA Finance
+Bench:
+  45: BAF
+  117: BBA Finance
+Bench:
+  46: BAF
+  118: BBA Finance
+Bench:
+  47: BAF
+  119: BBA Finance
+Bench:
+  48: BAF
+  120: BBA Finance
+Bench:
+  49: BAF
+  121: BBA Finance
+Bench:
+  50: BAF
+  122: BBA Finance
+Bench:
+  51: BAF
+  123: BBA Finance
+Bench:
+  52: BAF
+  124: BBA Finance
+
+702
+Bench:
+  53: BAF
+  125: BBA Finance
+Bench:
+  54: BAF
+  126: BBA Finance
+Bench:
+  55: BAF
+  127: BBA Finance
+Bench:
+  56: BAF
+  128: BBA Finance
+Bench:
+  57: BAF
+  129: BBA Finance
+Bench:
+  58: BAF
+  130: BBA Finance
+Bench:
+  59: BAF
+  131: BBA Finance
+Bench:
+  60: BAF
+  132: BBA Finance
+Bench:
+  61: BAF
+  133: BBA Finance
+Bench:
+  62: BAF
+  134: BBA Finance
+Bench:
+  63: BAF
+  135: BBA Finance
+Bench:
+  64: BAF
+  136: BBA Finance
+Bench:
+  65: BAF
+  137: BBA Finance
+Bench:
+  66: BAF
+  138: BBA Finance
+Bench:
+  67: BAF
+  139: BBA Finance
+Bench:
+  68: BAF
+  140: BBA Finance
+Bench:
+  69: BAF
+  141: BBA Finance
+Bench:
+  70: BAF
+  142: BBA Finance
+Bench:
+  71: BAF
+  143: BBA Finance
+Bench:
+  72: BAF
+  144: BBA Finance
+Bench:
+  145: BBA Finance
+  173: BBA HR
+
+701
+Bench:
+  146: BBA Finance
+  174: BBA HR
+Bench:
+  147: BBA Finance
+  175: BBA HR
+Bench:
+  148: BBA Finance
+  176: BBA HR
+Bench:
+  149: BBA Finance
+  177: BBA HR
+Bench:
+  150: BBA Finance
+  178: BBA HR
+Bench:
+  151: BBA Finance
+  179: BBA HR
+Bench:
+  152: BBA Finance
+  180: BBA HR
+Bench:
+  153: BBA Finance
+  181: BBA HR
+Bench:
+  154: BBA Finance
+  182: BBA HR
+Bench:
+  155: BBA Finance
+  183: BBA HR
+Bench:
+  156: BBA Finance
+  184: BBA HR
+Bench:
+  157: BBA Finance
+  185: BBA HR
+Bench:
+  158: BBA Finance
+  186: BBA HR
+Bench:
+  159: BBA Finance
+  187: BBA HR
+Bench:
+  160: BBA Finance
+  188: BBA HR
+Bench:
+  161: BBA Finance
+  189: BBA Marketing
+Bench:
+  162: BBA Finance
+  190: BBA Marketing
+Bench:
+  163: BBA Finance
+  191: BBA Marketing
+Bench:
+  164: BBA Finance
+  192: BBA Marketing
+Bench:
+  165: BBA Finance
+  193: BBA Marketing
+Bench:
+  166: BBA Finance
+  194: BBA Marketing
+
+703
+Bench:
+  167: BBA Finance
+  195: BBA Marketing
+Bench:
+  168: BBA Finance
+  196: BBA Marketing
+Bench:
+  169: BBA Finance
+  197: BBA Marketing
+Bench:
+  170: BBA Finance
+  198: BBA Marketing
+Bench:
+  171: BBA Finance
+  199: BBA Marketing
+Bench:
+  172: BBA Finance
+  200: BBA Marketing
+Bench:
+  201: BBA Marketing
+Bench:
+  202: BBA Marketing
+Bench:
+  203: BBA Marketing
+Bench:
+  204: BBA Marketing
+Bench:
+  205: BBA Marketing
+Bench:
+  206: BBA Marketing
+Bench:
+  207: BBA Marketing
+Bench:
+  208: BBA Marketing
+Bench:
+  209: BBA Marketing
+Bench:
+  210: BBA Marketing
+Bench:
+  211: BBA Marketing
+
+705
+Bench:
+  212: BBA Marketing
+Bench:
+  213: BBA Marketing
+Bench:
+  214: BBA Marketing
+Bench:
+  215: BBA Marketing
+Bench:
+  216: BBA Marketing
+Bench:
+  217: BBA Marketing
+Bench:
+  218: BBA Marketing
+Bench:
+  219: BBA Marketing
+Bench:
+  220: BBA Marketing
+Bench:
+  221: BBA Marketing
+Bench:
+  222: BBA Marketing
+Bench:
+  223: BBA Marketing
+Bench:
+  224: BBA Marketing
+Bench:
+  225: BBA Marketing
+Bench:
+  226: BBA Marketing
+Bench:
+  227: BBA Marketing
+Bench:
+  228: BBA Marketing
+

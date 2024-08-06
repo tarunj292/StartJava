@@ -1,0 +1,1855 @@
+SK SOMAIYA COLLEGE
+SOMAIYA VIDYAVIHAR UNIVERSITY
+
+
+
+CORE JAVA JOURNAL
+
+
+
+
+Tarun Joshi
+SYBSC CS (Hons.)
+Semester III
+2023 - 2024
+Roll no : 31011122036
+
+
+
+
+
+
+
+
+
+INDEX
+
+Practical
+Topic
+Date
+1
+Classes and Objects
+7/8/23
+2
+Static members
+14/8/23
+3
+Inheritance
+21/8/23
+4
+Interfaces and packages
+28/8/23
+5
+Exception Handling
+18/9/23
+6
+Collection Framework
+25/9/23
+7
+JDBC
+9/10/23
+8
+Graphics
+9/10/23
+9
+Multithreading
+16/10/23
+10
+File Handling
+16/10/23
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Practical 1
+Q1.Create a class Circle. Add a constant for storing the value of PI. Add an instance variable for storing the radius. Add appropriate constructor(s) and methods for calculating the area and circumference of the circle.
+class Circle
+{
+	final double PI = 3.14;
+	int radius;
+	Circle(int radius)
+	{cd..
+		this.radius = radius;
+	}
+	
+	double circumference()
+	{
+		return 2*PI*radius;
+	}
+	
+	double area()
+	{
+		return PI*radius*radius;
+	}
+}
+
+class CircleDemo
+{
+	public static void main(String [] args)
+	{
+		Circle c = new Circle(36);
+		System.out.println(c.circumference());
+		System.out.println(c.area());
+	}
+}
+
+
+
+class RESTRA
+{
+	private int foodCode;
+	private String food,foodType, sticker;
+	private void getSticker()
+	{
+		if(foodType.equalsIgnoreCase("Vegetarian"))
+			sticker = "GREEN";
+		else if(foodType.equalsIgnoreCase("Contains Egg"))
+			sticker = "YELLOW";
+		else if(foodType.equalsIgnoreCase("Non-Vegetarian"))
+			sticker = "RED";
+	}
+	public void getFood()
+	{
+		foodCode = 1;
+		food = "Matar Paneer";
+		foodType = "Vegetarian";
+		getSticker();
+	}
+	public void showFood()
+	{
+		System.out.println("foodCode is "+foodCode);
+		System.out.println("food is "+food);
+		System.out.println("foodType is "+foodType);
+		System.out.println("Sticker is "+sticker);
+	}
+}
+class RestraDemo
+{
+	public static void main(String [] args)
+	{
+		RESTRA r1 = new RESTRA();
+		r1.getFood();
+		r1.showFood();
+	}
+}
+Q3.
+
+
+.
+import java.util.Scanner;
+class Student 
+{
+	int rno;
+	String name;
+	double[] marks=new double[5];
+	
+	Student(int rno,String name,double[] marks)
+	{
+		this.rno=rno;
+		this.name=name;
+		this.marks=marks;
+	}
+	double average()
+	{
+		double avg=0,per;
+		//avg=(marks[0]+marks[1]+marks[2]+marks[3]+marks[4])/500;
+		for(double i:marks)
+		{
+		avg+=i;
+		} 
+		avg/=500;
+		per=avg*100;
+		System.out.println("Percentage is = "+per);
+		if(per>80)
+			System.out.println("Grade = Distinction");
+		else if(per>79 && per<=60)
+			System.out.println("Grade = First Division");
+		else if(per>50 && per<=69)
+			System.out.println("Grade = Second Division");
+		else if(per>50 && per<49)
+			System.out.println("Grade = Third Division");
+		else
+			System.out.println("Fail");
+			return per;
+	}
+}
+class Result
+{
+	public static void main(String args[])
+	{
+		double[] marks=new double[5];
+		Scanner s=new Scanner(System.in);
+		for(int i=0;i<=4;i++)
+		{
+			System.out.println("Enter Marks of "+(i+1)+" Subjects");
+			marks[i]=s.nextDouble();
+		}
+		Student s1=new Student(36,"Tarun",marks);
+		s1.average();
+	}
+}
+Q4.Create a class Celsius with a data member to store temperature in Celsius degrees. Write appropriate constructor for initializing the data member. Write a method that converts the Celsius temperature to Fahrenheit temperature. Also write a method to display both Celsius temperature and its equivalent Fahrenheit temperature. Write another class with a main method to test Celsius class. 
+import java.util.Scanner;
+class Celsius
+{
+	double temp;
+	Celsius(double temp)
+	{
+		this.temp=temp;
+	}
+	double convert()
+	{
+		double f;
+		f=(temp*9/5)+32;
+		System.out.println("Temperature in Fahrenheit is = "+f);
+		System.out.println("Temperature in Celsius is = "+temp);
+		return f;
+	}
+}
+class Convert
+{
+	public static void main(String[] args)
+	{
+		double temp;
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter Temperature is Celsius");
+		temp=s.nextDouble();
+		Celsius c=new Celsius(temp);
+		c.convert();
+	}
+}
+
+
+Q5.Create a class Complex to operate on a complex number. Add fields to store real and imaginary part of a complex number. Add two constructors: One default and one parameterized to initialize a complex number. Add methods to add and multiply two complex numbers. Write another class with a main method to test Complex class. 
+
+class Complex {
+    private double real;
+    private double imaginary;
+
+    public Complex() {
+        this.real = 0.0;
+        this.imaginary = 0.0;
+    }
+
+    public Complex(double real, double imaginary) {
+        this.real = real;
+        this.imaginary = imaginary;
+    }
+
+    public Complex add(Complex other) {
+        double realPart = this.real + other.real;
+        double imaginaryPart = this.imaginary + other.imaginary;
+        return new Complex(realPart, imaginaryPart);
+    }
+
+    public Complex multiply(Complex other) {
+        double realPart = (this.real * other.real) - (this.imaginary * other.imaginary);
+        double imaginaryPart = (this.real * other.imaginary) + (this.imaginary * other.real);
+        return new Complex(realPart, imaginaryPart);
+    }
+
+    public void display() {
+        System.out.println(this.real + " + " + this.imaginary + "i");
+    }
+}
+class ComplexDemo
+{
+    public static void main(String[] args) {
+        Complex num1 = new Complex(3.0, 4.0); // 3 + 4i
+        Complex num2 = new Complex(1.0, -2.0); // 1 - 2i
+
+        Complex sum = num1.add(num2);
+        Complex product = num1.multiply(num2);
+
+        System.out.println("Complex Number 1: ");
+        num1.display();
+
+        System.out.println("Complex Number 2: ");
+        num2.display();
+
+        System.out.println("Sum of Complex Numbers: ");
+        sum.display();
+
+        System.out.println("Product of Complex Numbers: ");
+        product.display();
+    }
+}
+
+
+Q6.Define a class Candidate with the following description:
+Private Variables/Methods:
+• rno (Registration Number) of type long
+• name of type string
+• score of type float
+• remark of type string
+• assignRem( ) to assign Remarks as per the Score obtained by a candidate. Score range and
+the respective Remarks are shown as follows:
+ Score Remarks
+ >=50 Selected
+ less than 50 Not selected
+Other Methods:
+• A method enter( ) to set the values for rno, name, score & call method assignRem() to
+assign the remarks.
+• A method display( ) to allow user to view the content of all the instance variables
+In another class, write the main method to test the Candidate class.
+
+class Candidate {
+    private long rno;
+    private String name;
+    private String remarks;
+    private float score;
+
+    private void assignRem() {
+        if (score >= 50)
+            remarks = "Selected";
+        else
+            remarks = "Not Selected";
+    }
+
+    void enter(long rno, String name, float score) {
+        this.rno = rno;
+        this.name = name;
+        this.score = score;
+        assignRem();
+    }
+}
+
+Q7.Define a class PRODUCT with the following description :
+Private Members
+• code of type integer (Product Code)
+• pname of type string (Product Name)
+• price of type float (Price of each product)
+• qty of type integer (Quantity of product in stock)
+• offer of type float (Offer percentage on the product)
+• A method getOffer( ) to calculate offer percentage as per the following rule :
+ If qty <= 50 offer is 0
+ If 50 < qty <= 100 offer is 5
+ If qty >100 offer is 10
+Other Members
+• A method getStock( ) to set the values for code, pname, price, qty and call method
+getOffer( ) to calculate the offer.
+• A method ShowProduct( ) to allow user to view the content of all the instance variable.
+In another class, write main method to test the PRODUCT class.
+
+class Product {
+    private int code;
+    private String pname;
+    private float price;
+    private int qty;
+    private float offer;
+
+    private float getOffer() {
+        if (qty <= 50) {
+            offer = 0;
+        } else if (qty > 50 && qty <= 100) {
+            offer = 5;
+        } else {
+            offer = 10;
+        }
+        return offer;
+    }
+
+    void getStock(int code, String pname, float price, int qty) {
+        this.code = code;
+        this.pname = pname;
+        this.price = price;
+        this.qty = qty;
+        getOffer();
+    }
+
+    void ShowProduct() {
+        System.out.println("Product Code: " + this.code);
+        System.out.println("Product Name: " + this.pname);
+        System.out.println("Price: " + this.price);
+        System.out.println("Quantity in Stock: " + this.qty);
+        System.out.println("Offer: " + this.offer);
+    }
+}
+
+class Demo {
+    public static void main(String[] args) {
+        Product product = new Product();
+        product.getStock(101, "Pencil", 10.0f, 100);
+        product.ShowProduct();
+        Product product2 = new Product();
+        product2.getStock(102, "Core Java", 20.0f, 50);
+        product2.ShowProduct();
+    }
+}
+
+
+Q8.Design a class to represent a bank account. Include the following members:
+Data members/fields:
+• Name of the depositor
+• Account Number
+• Type of account
+• Balance amount in the account
+Methods
+• To assign initial values
+• To deposit an amount
+• To withdraw an amount after checking balance
+• To display the name and balance
+In another class, write main method to test your class
+class Bank
+{
+	String name;
+	long acc_no;
+	String acc_type;
+	double bal;
+	void setAccount(String name, long acc_no, String acc_type, double bal)
+	{
+		this.name = name;
+		this.acc_no = acc_no;
+		this.acc_type = acc_type;
+		this.bal = bal;
+	}
+	void deposit(double amt)
+	{
+		bal+=amt;
+		System.out.println("Rs. "+amt+" deposited to your account successfully");
+	}
+	void withdraw(double amt)
+	{
+		if(bal>=amt)
+		{
+			System.out.println("Rs. "+bal+" is the balance in your account");
+			bal-=amt;
+			System.out.println("Rs. "+amt+" withdrawn from your account successfully");
+		}
+		else
+			System.out.println("insufficient balance, Try entering a smaller amount");
+	}
+	void getAccount()
+	{
+		System.out.println("Your name is "+name+"\n Rs. "+bal+" is the balance in your account");
+	}
+}
+class BankDemo
+{
+	public static void main(String [] args)
+	{
+		Bank b = new Bank();
+		b.setAccount("Tarun Joshi",12948,"Savings Account",70000);
+		b.deposit(700);
+		b.withdraw(100);
+		b.getAccount();
+	}
+}
+   
+Q9.Define a Time class containing the following members:
+• Two integer fields minutes and hours
+• Two overloaded constructors
+• One method to display the class fields
+• increment() method that increments time by 1 minute
+• decrement() method that decrements time by 1 minute
+Properties for minutes and hours should ensure that only valid values of minutes and hours
+are set. One of the constructors take two integer parameters to assign values to data
+members and the other constructor takes one integer parameter representing total number
+of minutes and converts it into hours and minutes. Write the complete program to test the
+methods.
+
+class Time
+{
+    private int minutes;
+    private int hours;
+
+    Time(int minutes, int hours)
+    {
+        this.hours = hours+(minutes/60);
+        this.minutes = minutes%60;
+        
+    }
+
+    public Time(int totalMinutes)
+    {
+        this.minutes = totalMinutes % 60;
+        this.hours = totalMinutes / 60;
+    }
+
+    void display()
+    {
+        System.out.println("Time is: " + hours + ":" + minutes);
+    }
+
+    void increment()
+    {
+        minutes++;
+        if (minutes == 60)
+        {
+            minutes = 0;
+            hours++;
+        }
+    }
+
+    void decrement()
+    {
+        minutes--;
+        if (minutes == -1)
+        {
+            minutes = 59;
+            hours--;
+        }
+    }
+}
+
+class Demo
+{
+    public static void main(String[] args)
+    {
+        Time time1 = new Time(20, 330);
+        time1.display();
+        time1.increment();
+        time1.display();
+        time1.decrement();
+        time1.display();
+        Time time2 = new Time(60);
+        time2.display();
+    }
+}
+
+
+
+Q10.Create a class Person. Add data members to store the name and age of a person. Add a method to find the elder of two Person objects. Add other methods/constructors as required.
+In another class, write the main method to test the Person class.
+class Person
+{
+    private String name;
+    private int age;
+
+    Person(String name, int age)
+    {
+        this.name = name;
+        this.age = age;
+    }
+
+    String getName()
+    {
+        return name;
+    }
+
+    int getAge()
+    {
+        return age;
+    }
+
+    public static Person getElder(Person p1, Person p2)
+    {
+        if (p1.getAge() > p2.getAge())
+        {
+            return p1;
+        }
+        else
+        {
+            return p2;
+        }
+    }
+}
+class Demo
+{
+public static void main(String[] args)
+{
+Person p1 = new Person("Tarun", 20);
+Person p2 = new Person("Joshi", 19);
+Person elderPerson = Person.getElder(p1, p2);
+System.out.println("The elder person is " + elderPerson.getName());
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+Practical 2
+Q1.Create a class MathOperation, that has various static methods for providing basic mathematical operations like addition, multiplication, division, subtraction, a to the power b, absolute value etc., without using any library functions. Write a class MathApplication that has a main method. Allow the user to give three inputs: two numbers and the operation to be performed. The program should then call the appropriate method of MathOperation to determine the result.
+import java.util.Scanner;
+class MathOperation
+{
+	static double Add(double n1, double n2)
+	{
+		return (n1+n2);
+	}
+	static double Mul(double n1, double n2)
+	{
+		return (n1*n2);
+	}
+	static double Div(double n1, double n2)
+	{
+		if (n2 == 0)
+		{
+			System.out.println("Division by zero is not allowed.");
+			return Double.NaN;
+        	}
+        	return (n1/n2);
+	}
+	static double Sub(double n1, double n2)
+	{
+		return (n1-n2);
+	}
+	static double pow(double n1, double n2)
+	{
+		double res = 1;
+		for(int i=0; i<Math.abs(n2); i++)
+			res=res*n1;
+		if(n2<0)
+			return 1/res;
+		return res;
+	}
+	static double abs(double n1)
+	{
+		return Math.abs(n1);
+	}
+}
+class MathApplication
+{
+	public static void main(String [] args)
+	{
+		Scanner scn = new Scanner(System.in);
+		System.out.println("Enter first number:");
+		double n1 = scn.nextDouble();
+		System.out.println("Enter second number:");
+		double n2 = scn.nextDouble();
+		System.out.println("Enter:\n 1: Addition\n 2: Subtraction\n 3: Multiplication\n 4: Division\n 5: Power\n 6: Absolute Value");
+		int choice = scn.nextInt();
+		double result=0;
+		switch(choice)
+		{
+			case 1:
+				result =  MathOperation.Add(n1,n2);
+				break;
+			case 2:
+				result =  MathOperation.Sub(n1,n2);
+				break;
+			case 3:
+				result =  MathOperation.Mul(n1,n2);
+				break;
+			case 4:
+				result =  MathOperation.Div(n1,n2);
+				break;
+			case 5:
+				result =  MathOperation.pow(n1,n2);
+				break;
+			case 6:
+				result =  MathOperation.abs(n1);
+				break;
+			default:
+				System.out.println("Enter a valid Input");
+		}
+		System.out.println("Result is "+result);
+	} 
+}
+
+Q2.Create a class Box. To this class add: (i) Fields for storing height, width and depth of the box. (ii) Constructors to initialize the data members (iii) Method to calculate the volume of the box (iv) A static field to count the number of objects created of Box. Create another class BoxDemo to write the main method, create multiple objects of Box class, print their volumes and print number of Box objects created.
+
+class Box {
+    double h, w, d;
+    static int a = 0;
+
+    Box(double h, double w, double d) {
+        this.w = w;
+        this.h = h;
+        this.d = d;
+        a += 1;
+    }
+
+    double vol() {
+        double v = 0.0;
+        v = d * h * w;
+        return v;
+    }
+}
+
+class BoxDemo {
+    public static void main(String args[]) {
+        Box b = new Box(2, 3, 2);
+        System.out.println("Volume of Box is = " + b.vol());
+        System.out.println("Number of Objects Created are " + Box.a);
+    }
+}
+
+
+
+
+
+
+
+Practical 3
+Q1.Create a class Box with instance variables for storing height, width and depth of a box. Write
+constructors as follows: (i) Default constructor (ii) Parameterized constructor with values of
+height, width and depth given as parameter (iii) Parameterized constructor for creating a
+cube (iv) Parameterized constructor for creating a copy of the Box object Add a method for
+calculating the volume of the Box.
+From the Box class inherit a class WeightBox. Add the instance variable weight to the class.
+Write appropriate constructors. Create another class BoxDemo to write main method to
+create objects of WeightBox class and calculate its volume of the box.
+class Box {
+    double h, w, d;
+    static int a = 0;
+
+    Box() {
+    }
+
+    Box(double h, double w, double d) {
+        this.w = w;
+        this.h = h;
+        this.d = d;
+        a += 1;
+    }
+
+    Box(double l) {
+        w = d = h = l;
+    }
+
+    double vol() {
+        return d * h * w;
+    }
+}
+
+class WeightBox extends Box {
+    double weight;
+
+    WeightBox(double weight, double h, double w, double d) {
+        super(h, w, d);
+        this.weight = weight;
+    }
+
+    WeightBox(double weight, double l) {
+        super(l);
+        this.weight = weight;
+    }
+}
+
+class BoxDemo2 {
+    public static void main(String[] args) {
+        WeightBox wb = new WeightBox(30, 6, 6, 6);
+        WeightBox wb1 = new WeightBox(23, 3);
+        System.out.println("Volume is " + wb.vol());
+        System.out.println("Volume of Cube is " + wb1.vol());
+    }
+}
+
+
+
+Q2.. Imagine a publishing company that markets both book and CD versions of its works. Create
+a class called Publication that stores the title (a string) and price (a float) of a publication.
+From this class, derive two classes: Book which adds a page count (type int); and CD, which
+adds a playing time (type int) in minutes. Each of these classes should have constructors for
+initializing their data members and a method for displaying the value of the data members.
+Create another class for writing the main method and testing the inheritance hierarchy.
+
+class Publication {
+    String title;
+    float price;
+
+    public Publication(String title, float price) {
+        this.title = title;
+        this.price = price;
+    }
+
+    public void displayDetails() {
+        System.out.println("Title: " + title);
+        System.out.println("Price: " + price);
+    }
+}
+
+class Book extends Publication {
+    int pageCount;
+
+    public Book(String title, float price, int pageCount) {
+        super(title, price);
+        this.pageCount = pageCount;
+    }
+
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Page Count: " + pageCount);
+    }
+}
+
+class CD extends Publication {
+    private int playingTime;
+
+    public CD(String title, float price, int playingTime) {
+        super(title, price);
+        this.playingTime = playingTime;
+    }
+
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Playing Time: " + playingTime + " minutes");
+    }
+}
+
+class PublicationDemo {
+    public static void main(String[] args) {
+        Publication publication = new Publication("Rich Dad Poor Dad", 19.99f);
+        publication.displayDetails();
+        System.out.println();
+
+        Book book = new Book("How to win friends and influence People", 29.99f, 300);
+        book.displayDetails();
+        System.out.println();
+
+        CD cd = new CD("Teri Meri Meri Teri", 9.99f, 160);
+        cd.displayDetails();
+    }
+}
+
+
+Q3.Create a base class called Shape. Use this class to store two double type values (dim1 and
+dim2) that could be used to compute the area of figures. Derive two specific classes called
+Triangle and Rectangle from the base class Shape. Add to the base class, a method
+get_data() to initialize base class data members and another method display_area() to
+compute and display the area of figures. Override this method in the derived classes to suit
+their requirements.
+Using these three classes, design a program that will accept dimensions of a triangle or
+rectangle using command line argument and display the area. The two values given by the
+user will be treated as lengths of two sides in the case of rectangle and as base and height in
+the case of triangles
+
+class Shape {
+    double dim1, dim2;
+
+    void get_data(double d1, double d2) {
+        dim1 = d1;
+        dim2 = d2;
+    }
+
+    void display_area() {
+        System.out.println("Area calculation not defined for this shape.");
+    }
+}
+
+class Triangle extends Shape {
+    void display_area() {
+        double area = 0.5 * dim1 * dim2;
+        System.out.println("Area of Triangle: " + area);
+    }
+}
+
+class Rectangle extends Shape {
+    void display_area() {
+        double area = dim1 * dim2;
+        System.out.println("Area of Rectangle: " + area);
+    }
+}
+
+class ShapeDemo {
+    public static void main(String[] args) {
+        if (args.length != 2) {
+            System,.out.println(“Usage: java ShapeDemo <dim1> <dim2>”);
+            System.exit(1);
+        }
+        double dim1 = Double.parseDouble(args[0]);
+        double dim2 = Double.parseDouble(args[1]);
+        Shape shape;
+        if (args.length == 2) {
+            shape = new Rectangle();
+        } else {
+            shape = new Triangle();
+        }
+        shape.get_data(dim1, dim2);
+        shape.display_area();
+    }
+}
+
+Q4.Modify the above program as follows:
+(i) the display_area() method in Shape class should be abstract. Because Shape
+class has an abstract method, the class itself should be abstract.
+(ii) In the main method, create an object reference of Shape class and use it to
+store the reference of Rectangle and the Triangle object to demonstrate runtime polymorphism/dynamic method dispatch.
+abstract class Shape {
+    double dim1, dim2;
+
+    abstract void get_data(double d1, double d2);
+
+    abstract void display_area();
+}
+
+class Triangle extends Shape {
+    void get_data(double d1, double d2) {
+        dim1 = d1;
+        dim2 = d2;
+    }
+
+    void display_area() {
+        double area = 0.5 * dim1 * dim2;
+        System.out.println("Area of Triangle: " + area);
+    }
+}
+
+class Rectangle extends Shape {
+    void get_data(double d1, double d2) {
+        dim1 = d1;
+        dim2 = d2;
+    }
+
+    void display_area() {
+        double area = dim1 * dim2;
+        System.out.println("Area of Rectangle: " + area);
+    }
+}
+
+public class ShapeDemo {
+    public static void main(String[] args) {
+        if (args.length != 2) {
+            System.out.println("Usage: java ShapeDemo <dim1> <dim2>");
+            System.exit(1);
+        }
+        double dim1 = Double.parseDouble(args[0]);
+        double dim2 = Double.parseDouble(args[1]);
+        Shape shape;
+        shape = new Rectangle();
+        shape.get_data(dim1, dim2);
+        shape.display_area();
+        shape = new Triangle();
+        shape.get_data(dim1, dim2);
+        shape.display_area();
+    }
+}
+
+Practical 4
+Q1.Create an interface Figure with field PI for storing the value of PI and declare three methods:
+(i) For finding area
+(ii) For finding perimeter
+(iii) For displaying the dimensions of a figure
+Create two classes: Rectangle and Circle, that implement this interface.
+In another class (FigureDemo), write the main method to test Rectangle and Circle class.
+
+interface Figure {
+    double PI = 3.14159;
+
+    double calculateArea();
+
+    double calculatePerimeter();
+
+    void displayDimensions();
+}
+
+class Rectangle implements Figure {
+    private double length;
+    private double width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    public double calculateArea() {
+        return length * width;
+    }
+
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+
+    public void displayDimensions() {
+        System.out.println("Rectangle Dimensions: Length = " + length + ", Width = " + width);
+    }
+}
+
+class Circle implements Figure {
+    private double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public double calculateArea() {
+        return PI * radius * radius;
+    }
+
+    public double calculatePerimeter() {
+        return 2 * PI * radius;
+    }
+
+    public void displayDimensions() {
+        System.out.println("Circle Dimensions: Radius = " + radius);
+    }
+}
+
+public class FigureDemo {
+    public static void main(String[] args) {
+        Rectangle rectangle = new Rectangle(5.0, 3.0);
+        System.out.println("Rectangle Area: " + rectangle.calculateArea());
+        System.out.println("Rectangle Perimeter: " + rectangle.calculatePerimeter());
+        rectangle.displayDimensions();
+
+        Circle circle = new Circle(4.0);
+        System.out.println("Circle Area: " + circle.calculateArea());
+        System.out.println("Circle Circumference: " + circle.calculatePerimeter());
+        circle.displayDimensions();
+    }
+}
+Q2.Write a program to implement the following inheritance hierarchy: 
+
+
+package MyPack;
+
+public class Balance {
+    private String name;
+    private double balance;
+
+    public Balance(String name, double balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+
+    public void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Balance: $" + balance);
+        if (balance < 0) {
+            System.out.println("Balance is less than 0");
+        }
+    }
+}
+import MyPack.Balance;
+
+public class TestBalance {
+    public static void main(String[] args) {
+        Balance balance1 = new Balance("Tarun Joshi", -500);
+        System.out.println("Account Information:");
+        balance1.display();
+
+        Balance balance2 = new Balance("Sejal Joshi", 200);
+        System.out.println("\nAccount Information:");
+        balance2.display();
+    }
+}
+
+Q3.Create a package MyPack. Add a class Balance in MyPack. To this class add:
+(i) Fields for storing name and balance
+(ii) A parameterized constructor to initialize the fields
+(iii) A method to display the field. Also display if balance is less than 0.
+In another folder, add a class TestBalance. In this class write main() method to test the
+Balance class.
+
+class Student {
+    int rollno;
+
+    Student(int rno) {
+        rollno = rno;
+    }
+
+    void putNumber() {
+        System.out.println("Roll No=" + rollno);
+    }
+}
+
+class Test extends Student {
+    float part1, part2;
+
+    Test(int rno, float p1, float p2) {
+        super(rno);
+        part1 = p1;
+        part2 = p2;
+    }
+
+    void putMarks() {
+        System.out.println("Part1=" + part1 + ", Part2=" + part2);
+    }
+}
+
+interface Sports {
+    float sportswt = 0.64f;
+
+    void putwt();
+}
+
+class Result extends Test implements Sports {
+    Result(int rno, float p1, float p2) {
+        super(rno, p1, p2);
+    }
+
+    void display() {
+        float total = part1 + part2;
+        System.out.println("Sports weight=" + sportswt);
+        System.out.println("Total Marks=" + total);
+    }
+
+    public void putwt() {
+        System.out.println("Sportswt=" + sportswt);
+    }
+}
+
+class Demo {
+    public static void main(String[] args) {
+        Result r = new Result(36, 60, 99);
+        r.putNumber();
+        r.putMarks();
+        r.putwt();
+        r.display();
+    }
+}
+Practical 5
+Q1.Wap to accept two numbers as command-line arguments. If the appropriate number of command-line arguments are not passed, then raise an ArrayIndexOutOfBoundsException and print an appropriate message. Also check if the command-line arguments are integers, if not then handle NumberFormatException.
+public class AddTwoNumbers {
+    public static void main(String[] args) {
+        try {
+            if (args.length != 2) {
+                throw new IllegalArgumentException("Please provide exactly two command-line arguments.");
+            }
+
+            int num1 = Integer.parseInt(args[0]);
+            int num2 = Integer.parseInt(args[1]);
+
+            System.out.println("Sum of the two numbers: " + (num1 + num2));
+        } catch (IllegalArgumentException e) {
+            System.err.println("Error: " + e.getMessage());
+        } catch (NumberFormatException e) {
+            System.err.println("Error: Please provide valid integer arguments.");
+        }
+    }
+}
+
+
+Q2.Wap to accept a file name from the user and open it for reading. If the file does not exist, handle FileNotFoundException. If the file exists, then print its contents on the output screen.
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileReadingExample {
+    public static void main(String[] args) {
+        try {
+            if (args.length != 1) {
+                throw new IllegalArgumentException("Usage: java FileReadingExample <filename>");
+            }
+
+            String fileName = args[0];
+            FileReader fileReader = new FileReader(fileName);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            bufferedReader.close();
+        } catch (IllegalArgumentException e) {
+            System.err.println("Error: " + e.getMessage());
+        } catch (IOException e) {
+            System.err.println("An error occurred while reading the file: " + e.getMessage());
+        }
+    }
+}
+
+
+Q3.Wap to accept a long integer number from the user and find its factorial. If the number is negative or larger than 10, raise and handle an exception by providing your own exception class.
+class FactorialException extends Exception {
+    public FactorialException(String message) {
+        super(message);
+    }
+}
+
+public class FactorialCalculator {
+    public static void main(String[] args) {
+        try {
+            long number = getInputNumber();
+            if (number < 0 || number > 10) {
+                throw new FactorialException("Input is negative or larger than 10");
+            }
+
+            long factorial = calculateFactorial(number);
+            System.out.println("Factorial of " + number + " is " + factorial);
+        } catch (FactorialException e) {
+            System.err.println("Factorial Calculation Error: " + e.getMessage());
+        }
+    }
+
+    private static long getInputNumber() {
+        return 5;
+    }
+
+    private static long calculateFactorial(long n) {
+        if (n == 0) {
+            return 1;
+        }
+        return n * calculateFactorial(n - 1);
+    }
+}
+Practical 6
+Q1. Sample program for ArrayList.
+import java.util.ArrayList;
+
+class ArrayListDemo {
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(56);
+        numbers.add(5);
+        numbers.add(6);
+        numbers.add(7);
+        numbers.add(8);
+        numbers.add(9);
+        numbers.add(1);
+        numbers.add(4);
+
+        Integer x = 5;
+        numbers.remove(x);
+
+        for (int i = 0; i < numbers.size(); i++) {
+            System.out.println(numbers.get(i));
+        }
+
+        System.out.println("Contains " + numbers.contains(5));
+        System.out.println("Index Of " + numbers.indexOf(4));
+    }
+}
+
+Q2.Wap to implement ArrayList to store a Student object. Demonstrate various methods of ArrayList class. Also illustrate ways to iterate through the ArrayList.
+import java.util.ArrayList;
+import java.util.Iterator;
+
+class Student {
+    int rno;
+    String name;
+
+    Student(int rno, String name) {
+        this.rno = rno;
+        this.name = name;
+    }
+
+    void display() {
+        System.out.println("Roll number = " + rno + "\n" + "Name = " + name);
+    }
+}
+
+class ArrayListDemo1 {
+    public static void main(String[] args) {
+        ArrayList<Student> studList = new ArrayList<>();
+        Student s1 = new Student(2, "Vaibhav");
+        studList.add(s1);
+        studList.add(new Student(3, "Shubham"));
+        studList.add(new Student(4, "Nikhil"));
+        studList.add(new Student(5, "Jitendra"));
+        studList.add(new Student(6, "Romey"));
+        studList.add(new Student(7, "Moksh"));
+
+        for (Student s : studList)
+            s.display();
+
+        System.out.println(" ");
+
+        Iterator<Student> iter = studList.iterator();
+        while (iter.hasNext())
+            iter.next().display();
+
+        studList.forEach(Student::display);
+
+        System.out.println(studList.isEmpty());
+        System.out.println(studList.indexOf(s1));
+
+        studList.remove(s1);
+        studList.remove(3);
+
+        for (Student s : studList)
+            s.display();
+    }
+}
+Q3.Wap to implement all common set operations.
+import java.util.HashSet;
+import java.util.Set;
+
+class SetDemo {
+    public static void main(String[] args) {
+        HashSet<Character> s1 = new HashSet<>();
+        s1.add('a');
+        s1.add('b');
+        s1.add('c');
+        s1.add('e');
+        s1.add('d');
+
+        System.out.println("s1 = " + s1);
+
+        HashSet<Character> s2 = new HashSet<>();
+        s2.add('l');
+        s2.add('d');
+        s2.add('x');
+        s2.add('z');
+
+        System.out.println("\ns2 = " + s2);
+
+        Set<Character> union = new HashSet<>(s1);
+        union.addAll(s2);
+
+        System.out.println("\nUnion = " + union);
+
+        Set<Character> intersection = new HashSet<>(s1);
+        intersection.retainAll(s2);
+
+        System.out.println("\nIntersection = " + intersection);
+
+        Set<Character> diff = new HashSet<>(s1);
+        diff.removeAll(s2);
+
+        System.out.println("\nDifference = " + diff);
+
+        System.out.println("\n" + s1.containsAll(s2));
+
+        s1.remove('d');
+        System.out.println("After removing s1 = " + s1);
+
+        System.out.println(s1.contains('w'));
+        System.out.println(s2.isEmpty());
+    }
+}
+Q4. Wap to implement methods of HashMap.
+import java.util.HashMap;
+
+class MapDemo {
+    public static void main(String[] args) {
+        HashMap<Integer, String> studMap = new HashMap<>();
+        studMap.put(12, "Neha");
+        studMap.put(13, "Kajal");
+        studMap.put(14, "Sejal");
+        studMap.put(15, "Henna");
+
+        System.out.println(studMap);
+    }
+}
+Practical 7
+Q1.Wap in JDBC to create a Student table. Student(roll no[primary key],name,course,marks)
+import java.sql.*;
+
+class JDBCDemo {
+    public static void main(String[] args) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            String connectionUrl = "jdbc:mysql://localhost:3306/test?user=root&password=somaiya";
+
+            Connection con = DriverManager.getConnection(connectionUrl);
+
+            System.out.println("Connected to the database...");
+
+            con.close();
+        } catch (ClassNotFoundException ce) {
+            System.out.println("Driver Error: " + ce);
+        } catch (SQLException se) {
+            System.out.println(se);
+        }
+    }
+}
+
+Q2.Wap in JDBC to insert 5 records in the table. Accept the table values from the user
+import java.sql.*;
+import java.util.Scanner;
+
+public class JdbcInsertStudentRecords {
+    public static void main(String[] args) {
+        String jdbcURL = "jdbc:mysql://localhost:3306/test?user=root&password=root";
+        try (Connection connection = DriverManager.getConnection(jdbcURL)) {
+            System.out.println("Connected...");
+            String createTableQuery = "CREATE TABLE IF NOT EXISTS student (" +
+                    "rollno INT PRIMARY KEY," +
+                    "name VARCHAR(30)," +
+                    "course VARCHAR(20)," +
+                    "marks FLOAT)";
+            try (PreparedStatement createTableStatement = connection.prepareStatement(createTableQuery)) {
+                createTableStatement.executeUpdate();
+                System.out.println("Student table created or already exists.");
+            }
+            String insertQuery = "INSERT INTO student (rollno, name, course, marks) VALUES (?, ?, ?, ?)";
+            try (PreparedStatement preparedStatement=connection.prepareStatement(insertQuery)) {
+                Scanner scanner = new Scanner(System.in);
+                for (int i = 1; i <= 5; i++) {
+                    System.out.println("Inserting Record " + i);
+                    System.out.print("Enter Roll No: ");
+                    int rollNo = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.print("Enter Name: ");
+                    String name = scanner.nextLine();
+                    System.out.print("Enter Course: ");
+                    String course = scanner.nextLine();
+                    System.out.print("Enter Marks: ");
+                    float marks = scanner.nextFloat();
+                    scanner.nextLine();
+                    preparedStatement.setInt(1, rollNo);
+                    preparedStatement.setString(2, name);
+                    preparedStatement.setString(3, course);
+                    preparedStatement.setFloat(4, marks);
+
+                    preparedStatement.executeUpdate();
+                    System.out.println("Record inserted successfully.");
+                }
+            }
+            System.out.println("All records inserted successfully.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("SQLException: " + e.getMessage());
+        }
+    }
+}
+
+
+
+
+
+Q3.Wap in JDBC to give 5% grave marks to Students who have scored less than 40 marks.
+import java.sql.*;
+
+public class JdbcApplyGraceMarks {
+    public static void main(String[] args) {
+        String jdbcURL = "jdbc:mysql://localhost:3306/test?user=root&password=root";
+
+        try (Connection connection = DriverManager.getConnection(jdbcURL)) {
+            System.out.println("Connected...");
+
+            String updateQuery = "UPDATE student SET marks = marks + (marks * 0.05) WHERE marks < 40";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(updateQuery)) {
+                int rowsUpdated = preparedStatement.executeUpdate();
+                System.out.println(rowsUpdated + " Records updated with 5% grace marks.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("SQLException: " + e.getMessage());
+        }
+    }
+}
+
+
+
+
+
+
+
+
+Q4.Wap in JDBC to delete a record of a student with roll number 409.
+import java.sql.*;
+
+public class JdbcDeleteStudentRecord {
+    public static void main(String[] args) {
+        String jdbcURL = "jdbc:mysql://localhost:3306/test?user=root&password=root";
+
+        try (Connection connection = DriverManager.getConnection(jdbcURL)) {
+            System.out.println("Connected...");
+
+            String deleteQuery = "DELETE FROM student WHERE rollno = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
+                int rollNoToDelete = 409;
+                preparedStatement.setInt(1, rollNoToDelete);
+
+                int rowsDeleted = preparedStatement.executeUpdate();
+                if (rowsDeleted > 0) {
+                    System.out.println("Record with rollno " + rollNoToDelete + " deleted successfully.");
+                } else {
+                    System.out.println("No records found with rollno " + rollNoToDelete);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("SQLException: " + e.getMessage());
+        }
+    }
+}
+Practical 8
+
+Q1. Login Form
+import java.awt.*;
+import java.awt.event.*;
+class LoginForm extends Frame implements ActionListener {
+TextField tfUname, tfPwd;
+Button btnLogin;
+Label lbl;
+
+LoginForm (String title)
+{
+super (title);
+tfUname = new TextField (15);
+tfPwd = new TextField (15);
+tfPwd.setEchoChar('*');
+btnLogin = new Button ("Login");
+lbl = new Label ("Enter your credentials");
+
+btnLogin.addActionListener (this);
+
+setLayout(new FlowLayout());
+add (new Label("Enter username: "));
+add (tfUname);
+add (new Label("Enter password: "));
+add (tfPwd);
+add (btnLogin);
+add (lbl);
+}
+public void actionPerformed (ActionEvent e) {
+
+String uname = tfUname.getText ();
+String pwd = tfPwd.getText ();
+if (uname.equals("sycs") && pwd.equals("1234"))
+    lbl.setText ("Login Successful");
+else
+    lbl.setText ("Login Failed");
+}
+public static void main (String[] args)
+{
+LoginForm obj = new LoginForm ("Login");
+obj.setSize (300, 300);
+obj.setVisible (true);
+}}
+
+Q2.Changing Label background on Button click
+import java.awt.*;
+import java.awt.event.*;
+
+class ButtonDemo extends Frame implements ActionListener
+{
+Button rbtn, gbtn, bbtn;
+Label lbl;
+
+ButtonDemo(String title)
+{
+super(title);
+rbtn = new Button ("RED");
+gbtn = new Button ("GREEN");
+bbtn = new Button ("BLUE");
+lbl = new Label("Hello World!");
+
+rbtn.addActionListener (this);
+gbtn.addActionListener (this);
+bbtn.addActionListener (this);
+
+setLayout(new FlowLayout());
+add(rbtn);
+add(gbtn);
+add(bbtn);
+add(lbl);
+}
+public void actionPerformed (ActionEvent e)
+{
+Button b = (Button) e.getSource();
+if (b == rbtn)
+    lbl.setBackground(Color.red);
+else if (b == gbtn)
+    lbl.setBackground (Color.green);
+else if (b == bbtn)
+    lbl.setBackground(Color.blue);
+}
+public static void main (String[] args)
+{
+ButtonDemo bobj = new ButtonDemo("Button Demo");
+bobj.setSize (300, 300);
+bobj.setVisible (true);
+}
+}
+
+Q3.WAP to display ice cream flavors in a list box and the total price of the selected flavors is displayed in a label.
+import java.awt.*;
+import java.awt.event.*;
+class ListDemo extends Frame implements ItemListener
+{
+List lb;
+Label lbl;
+double price[] = {45, 50, 35, 32, 50};
+ListDemo(String title)
+{
+super(title);
+lb = new List ();
+lb.add ("Vanilla");
+lb.add ("Chocochip");
+lb.add ("Mixed Berries");
+lb.add ("Strawberries");
+lb.add ("Butterscotch");
+lb.select(0);
+lb.setMultipleMode (true);
+
+lbl = new Label("Make a choice");
+
+lb.addItemListener (this);
+
+setLayout(new FlowLayout());
+add(lb);
+add(lbl);
+}
+public void itemStateChanged (ItemEvent e)
+{
+int ind[] = lb.getSelectedIndexes ();
+double total = 0.0;
+for (int i = 0; i < ind.length; i++)
+{
+total += price[ind[i]];
+}
+lbl.setText ("Total: " + total);
+}
+public static void main (String[] args)
+{
+ListDemo obj = new ListDemo("Button Demo");
+obj.setSize (300, 300);
+obj.setVisible (true);
+}}
+Q4.WAP to display a list of browsers (four in number) in a choice (combo box). The selected browser should be displayed in a label.
+import java.awt.*;
+import java.awt.event.*;
+class ChoiceDemo extends Frame implements ItemListener
+{
+Choice cb;
+Label lbl;
+ChoiceDemo (String title)
+{
+super (title);
+cb = new Choice();
+cb.add("Internet Explorer");
+cb.add("Mozilla Firefox");
+cb.add("Google Chrome");
+cb.add("Opera");
+cb.setBounds(100, 100, 120, 120);
+lbl = new Label ("Make a choice");
+cb.addItemListener(this);
+add (cb);
+add (lbl);
+}
+public void itemStateChanged (ItemEvent ae)
+{
+String br = cb.getSelectedItem ();
+lbl.setText (br);
+}
+public static void main (String[] args)
+{
+ChoiceDemo ob = new ChoiceDemo ("Choice Demo");
+ob.setSize (300, 300);
+ob.setVisible (true);
+}
+}
+
+ Q5. Write a program to display a dot on a mouse click.
+import java.awt.*;
+import java.awt.event.*;
+
+class MouseDemo extends Frame implements MouseListener
+{
+int x = 0, y = 0;
+MouseDemo(String title)
+{
+setTitle (title);
+addMouseListener (this);
+}
+public void mouseClicked(MouseEvent e)
+{
+x = e.getX();
+y = e.getY();
+repaint();
+}
+public void mouseExited (MouseEvent e) { }
+public void mouseEntered (MouseEvent e) { }
+public void mouseReleased (MouseEvent e) { }
+public void mousePressed (MouseEvent e) { }
+public void paint (Graphics g)
+{
+g.fillOval (x-10, y-10, 10, 10);
+}
+public static void main (String[] args)
+{
+MouseDemo obj = new MouseDemo("Mouse Demo");
+obj.setSize (300, 300);
+obj.setVisible (true);
+}
+}
+
+
+Practical 9
+Q1.Wap to create a thread that prints numbers 5 to 1 every second
+class Threading
+{
+	public static void main(String[] args)
+	{
+		Thread t=Thread.currentThread();
+		System.out.println("Numbers from 5 to 1 with delay of 1 second"+t);
+		try
+		{
+			for(int i=5;i>0;i--)
+			{
+				System.out.println(i);
+				Thread.sleep(1000);
+			}
+		}
+		catch(InterruptedException e)
+		{
+			System.out.println("Main THread interrupted");
+		}
+	}
+}
+
+Q2.Wap to solve producer consumer problem using multithreading
+class Q{
+	int n;
+	boolean valueSet = false;
+	synchronized int get(){
+		while(!valueSet){
+			try{ wait(); }
+			catch(InterruptedException e)
+{
+				System.out.println("Interrupted");
+			}
+		}
+		System.out.println("Got:"+n);
+		valueSet = false;
+		notify();
+		return n;
+	}
+	synchronized void put(int n)
+{
+		while(valueSet)
+{
+			try
+{ 
+wait();
+ }
+			catch(InterruptedException e)
+{
+				System.out.println("Interrupted");
+			}
+		}
+		this.n = n;
+		valueSet = true;
+		System.out.println("Put:" +n);
+		notify();
+	}
+}
+class Producer implements Runnable
+{
+	Q q;
+	Producer(Q q)
+	{
+		this.q=q;
+		new Thread(this,"Producer").start();
+
+	}
+	public void run()
+{
+		int i=1;
+		while(true)
+			q.put(i++);
+	}
+}
+class Consumer implements Runnable
+{
+	Q q;
+	Consumer(Q q)
+{
+		this.q=q;
+		new Thread(this,"Consumer").start();
+	}
+	public void run()
+{
+		while(true)
+			q.get();
+	}
+
+}
+class PC
+{
+	public static void main(String []args)
+              {
+		Q q = new Q();
+		new Producer(q);
+		new Consumer(q);
+		System.out.println("Press Control-C to stop");
+	}
+}
+Practical 10
+Q1.Wap that will count the number of characters in a file.
+import java.io.*;
+class Demo
+{
+	public static void main(String[] args) throws IOException
+	{
+		FileReader fr = new FileReader("Demo.java");
+		int c = 0;
+		while(fr.read() != -1) c += 1;
+		System.out.println("Total no. of characters:"+c);
+		fr.close();
+	}
+}
+
+Q2.Wap to copy the contents of file1.txt into file2.txt using:-
+i. byte stream
+class Demo
+{
+	public static void main(String[] args) throws IOException
+	{
+		FileInputStream f1 = new FileInputStream("file1.txt");
+		FileOutputStream f2 = new FileOutputStream("file2.txt",true);
+		int c;
+		while((c=f1.read()) != -1)
+			f2.write(c);
+		f1.close();
+		f2.close();
+	}
+}
+
+ii. character stream
+import java.io.*;
+class Demo
+{
+	public static void main(String[] args) throws IOException
+	{
+
+		FileReader fr1 = new FileReader("file1.txt");
+		FileWriter fr2 = new FileWriter("file2.txt");
+		String content = "";
+		int c = 0;
+		while((c=fr1.read()) != -1) content += (char)c;
+		fr2.write(content);
+		fr1.close();
+		fr2.close();
+	}
+}
+
+Q3.Create a class Product with fields to store product id,name and price. Wap to store the objects of this class to a file. Then read the object and display it on the console.
+import java.io.*;
+class Product implements Serializable
+{
+	int pid, price;
+	String name;
+	public Product(int productId, String name, int price)
+	{
+		pid = productId;
+		this.name = name;
+		this.price = price;
+	}
+	public String toString()
+	{
+		return "Product ID:"+pid+"; Name:"+name+"; Price:"+price;
+	}
+}
+class Demo
+{
+	public static void main(String[] args)
+	{
+		try
+		{
+			Product p1 = new Product(45,"Bread",50);
+			System.out.println("Product wrote:"+p1);
+			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("products.txt",true));
+			oos.writeObject(p1);
+			oos.close();
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream("products.txt"));
+			Product p2 = (Product) ois.readObject();
+			ois.close();
+			System.out.println("Product read:"+p2);
+		}
+		catch(IOException e) 
+		{
+			e.printStackTrace();
+		} 
+		catch(ClassNotFoundException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
